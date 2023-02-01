@@ -1,0 +1,35 @@
+INSERT
+db.pokemon.insertOne({
+  "id": 899,
+  "pokedexId": 899,
+  "name": "Darty Papa",
+  "image": "https://tenor.com/fr/view/kassos-darty-papa-gif-5752923",
+  "videoYoutube": "https://www.youtube.com/watch?v=Gt5-xU1-Ows",
+  "slug": "Darty Papa",
+  "stats": {
+    "HP": 100000000,
+    "attack": 100000000,
+    "defense": 2,
+    "special_attack": 100000000,
+    "special_defense": 2,
+    "speed": 1
+  }
+})
+
+
+
+UPDATE
+db.pokemon.updateOne({ "name": "Darty Papa" }, { $set: { "name": "Darty Daddy" } })
+
+
+DELETE
+db.pokemon.updateOne({ "slug": "Darty Papa" }, { $unset: { "slug": "" } })
+
+
+FIND
+db.pokemon.findOne({ "name": "Darty Daddy" })
+
+
+BACKUP
+mongodump --host localhost:27017 --db JDG --collection pokemon --out /home/diaby/IA_dev_Python/py-sql/Mongodb --username root --password example
+
